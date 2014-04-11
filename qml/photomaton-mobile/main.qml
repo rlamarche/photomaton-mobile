@@ -1,3 +1,12 @@
+/*
+ * This file is part of the Photomaton-mobile package.
+ *
+ * (c) Romain Lamarche
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 import QtQuick 2.1
 import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1

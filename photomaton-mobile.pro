@@ -1,3 +1,12 @@
+ #
+ # This file is part of the Photomaton-mobile package.
+ #
+ # (c) Romain Lamarche
+ #
+ # For the full copyright and license information, please view the LICENSE
+ # file that was distributed with this source code.
+ #
+
 folder_01.source = qml/photomaton-mobile
 folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
