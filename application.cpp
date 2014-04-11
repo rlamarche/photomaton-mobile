@@ -12,9 +12,9 @@ Application::Application(QObject *parent) :
     QObject::connect(&cameraController, SIGNAL(cameraOpened()), this, SLOT(cameraOpened()));
     QObject::connect(&cameraController, SIGNAL(previewReady(QImage)), this, SLOT(handlePreview(QImage)));
 
-  //  liveviewTimer.setInterval(5000);
+    liveviewTimer.setInterval(40);
 
-//    QObject::connect(&liveviewTimer, SIGNAL(timeout()), this, SLOT(capturePreview()));
+    QObject::connect(&liveviewTimer, SIGNAL(timeout()), this, SLOT(capturePreview()));
 }
 
 QStandardItemModel* Application::cameraListModel()
@@ -48,8 +48,8 @@ void Application::cameraOpened() {
     std::cout << "Camera opened\n";
     std::cout.flush();
 
-        capturePreview();
-    //liveviewTimer.start();
+        //capturePreview();
+    liveviewTimer.start();
 }
 
 void Application::handlePreview(const QImage image) {

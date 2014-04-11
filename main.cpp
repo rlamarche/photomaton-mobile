@@ -22,33 +22,12 @@ int main(int argc, char *argv[])
     QtQuick2ApplicationViewer viewer;
     Application application;
 
-    //qmlRegisterType<QStandardItemModel*>("Toto", )
     qmlRegisterType<QStandardItemModel>("com.mycompany.qmlcomponents", 1, 0, "QStandardItemModel");
     qmlRegisterType<Liveview>("org.rlamarche", 1, 0, "Liveview");
 
     viewer.rootContext()->setContextProperty("application", &application);
     viewer.setMainQmlFile(QStringLiteral("qml/photomaton-mobile/main.qml"));
     viewer.showExpanded();
-
-
- //   application.show();
-
-
-  //  GraphicsView view;
-   /* view.setViewport(widget);
-    view.setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
-    view.setScene(&scene);*/
-   // view.show();
-
-    /*
-    MainWindow w;
-    w.show();
-*/
-
-//    QQuickWindow::setDefaultAlphaBuffer(true);
-    //QQmlApplicationEngine engine(QUrl("qrc:///ui/application.qml"));
-
-
 
     return app.exec();
 }

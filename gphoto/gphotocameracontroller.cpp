@@ -182,8 +182,8 @@ void GPhotoCameraController::internalCapturePreview() {
     CameraFile *cameraFile;
     unsigned long int size;
     const char *data;
-    CameraEventType evttype;;
-    void *evtdata;
+    //CameraEventType evttype;;
+    //void *evtdata;
 
     int ret = gp_file_new(&cameraFile);
     if (!checkGPhotoSuccess(ret)) {
@@ -210,7 +210,7 @@ void GPhotoCameraController::internalCapturePreview() {
     gp_camera_wait_for_event(gp_camera, 5000, &evttype, &evtdata, gp_context);
     } while (ret == GP_OK && (evttype != GP_EVENT_CAPTURE_COMPLETE || evttype != GP_EVENT_TIMEOUT));
 */
-    gp_file_save(cameraFile, "output.jpg");
+    //gp_file_save(cameraFile, "output.jpg");
 
     QImage image;
    /* char* buffer = new char[size];
@@ -221,9 +221,9 @@ void GPhotoCameraController::internalCapturePreview() {
     f.write(buffer, size);
     f.close();*/
 
-//    image.loadFromData((uchar*) buffer, size, "JPG");
+    image.loadFromData((uchar*) data, size, "JPG");
 
-//    emit previewReady(image);
+    emit previewReady(image);
     gp_file_free(cameraFile);
     //delete [] buffer;
 }
