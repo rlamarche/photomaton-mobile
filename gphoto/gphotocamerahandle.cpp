@@ -6,13 +6,17 @@ GPhotoCameraHandle::GPhotoCameraHandle(QObject *parent) :
 }
 */
 
-GPhotoCameraHandle::GPhotoCameraHandle(int cameraNumber, QString model, QString port, Camera *camera, GPPort *gpport, CameraWidget *window) :
-    cameraNumber(cameraNumber),
-    model(model),
-    port(port),
-    camera(camera),
-    gpport(gpport),
-    window(window)
+GPhotoCameraHandle::GPhotoCameraHandle(QString model, QString port) :
+    m_model(model),
+    m_port(port)
 {
 
+}
+
+QString GPhotoCameraHandle::model() {
+    return m_model;
+}
+
+QString GPhotoCameraHandle::port() {
+    return m_port;
 }

@@ -1,8 +1,12 @@
 #include "gphotocommandthread.h"
 
-GPhotoCommandThread::GPhotoCommandThread(QObject *parent) :
-    QThread(parent)
+
+#include <iostream>
+
+GPhotoCommandThread::GPhotoCommandThread(GPhotoCameraController *controller) :
+    QThread((QObject*) controller)
 {
+    m_controller = controller;
     abort = false;
 }
 
@@ -53,8 +57,11 @@ void GPhotoCommandThread::run()
         if (!empty)
         {
             // TODO send gp context & widget
-            command->execute();
+            command->execute(m_controller);
             delete command;
+
+      //      std::cout << "Queue :" << commandQueue.length() << "\n";
+      //      std::cout.flush();
         }
 /*
         if (command.cameraNumber > -1) {

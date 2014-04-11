@@ -1,7 +1,6 @@
 #ifndef GRAPHICSSCENE_H
 #define GRAPHICSSCENE_H
 
-#include "widgets/cameraselectorwidget.h"
 
 #include <QGraphicsScene>
 
@@ -11,7 +10,7 @@ class GraphicsScene : public QGraphicsScene
 public:
     explicit GraphicsScene(QObject *parent = 0);
 protected:
-    CameraSelectorWidget cameraSelectorWidget;
+    //CameraSelectorWidget cameraSelectorWidget;
 
 signals:
 

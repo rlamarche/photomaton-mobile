@@ -7,21 +7,15 @@
 
 #include "gphoto/gphotocamerahandle.h"
 
+class GPhotoCameraController;
+
 class AbstractGPhotoCommand : public QObject
 {
     Q_OBJECT
 public:
     explicit AbstractGPhotoCommand(QObject *parent = 0);
 
-    virtual void execute(void) {}
-
-
-    void setGPContext(GPContext* context);
-protected:
-
-    GPContext *context;
-    int cameraNumber;
-    GPhotoCameraHandle cameraHandle;
+    virtual void execute(GPhotoCameraController* controller) = 0;
 
 signals:
 

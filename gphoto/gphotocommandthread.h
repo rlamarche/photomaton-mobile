@@ -8,11 +8,13 @@
 
 #include "gphoto/abstractgphotocommand.h"
 
+class GPhotoCameraController;
+
 class GPhotoCommandThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit GPhotoCommandThread(QObject *parent = 0);
+    explicit GPhotoCommandThread(GPhotoCameraController *controller);
 
     void enqueue(AbstractGPhotoCommand* command);
     void stop(void);
@@ -23,6 +25,8 @@ private:
     QWaitCondition condition;
     QQueue<AbstractGPhotoCommand*> commandQueue;
     bool abort;
+
+    GPhotoCameraController* m_controller;
 signals:
 
 public slots:

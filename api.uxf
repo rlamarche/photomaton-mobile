@@ -6,7 +6,7 @@
     <coordinates>
       <x>410</x>
       <y>110</y>
-      <w>300</w>
+      <w>330</w>
       <h>340</h>
     </coordinates>
     <panel_attributes>Application
@@ -84,24 +84,24 @@ GPhotoCameraController cameraController
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
+      <x>710</x>
       <y>120</y>
-      <w>340</w>
+      <w>310</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>320;30;30;30</additional_attributes>
+    <additional_attributes>290;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>680</x>
+      <x>710</x>
       <y>290</y>
-      <w>340</w>
+      <w>310</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>320;30;30;30</additional_attributes>
+    <additional_attributes>290;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>

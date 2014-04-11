@@ -9,9 +9,9 @@ class GPhotoListCamerasCommand : public AbstractGPhotoCommand
 public:
     explicit GPhotoListCamerasCommand(QObject *parent = 0);
 
-    void execute();
+    void execute(GPhotoCameraController* controller);
 signals:
-    void camerasDetected(QList<GPhotoCameraHandle>* camerasDetected);
+    void camerasDetected(QList<GPhotoCameraHandle> camerasDetected);
 public slots:
 
 };
